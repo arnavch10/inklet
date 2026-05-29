@@ -15,6 +15,7 @@ export async function POST(request: Request) {
   const transcription = await openai.audio.transcriptions.create({
     file,
     model: "gpt-4o-mini-transcribe",
+    prompt: "You are recording a class lecture where the professor is speaking."
   });
 
   return Response.json({ text: transcription.text });
