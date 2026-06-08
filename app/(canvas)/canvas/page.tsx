@@ -23,7 +23,6 @@ export default function Canvas() {
         recorder.ondataavailable = (e) => {
             chunksRef.current.push(e.data)
         }
-
         // on recorder stop
         recorder.onstop = async () => {
             const blob = new Blob(chunksRef.current, { type: recorder.mimeType });
